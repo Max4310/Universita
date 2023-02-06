@@ -13,8 +13,8 @@ import Facolta.Facolta_I;
  * @author STUDENTE
  */
 public class Esame {
-    String nomeEsame;
-    Facolta_I facolta;
+    private String nomeEsame;
+    private Facolta_I facolta;
 
     public Esame(String nomeEsame, Facolta_I facolta) {
         this.nomeEsame = nomeEsame;
