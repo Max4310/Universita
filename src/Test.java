@@ -51,11 +51,11 @@ public class Test {
         universita.get(docente1.getIndexFacolta()).setEsameAttivo(new EsameAttivo(universita.get(0).getNextEsame().getNomeEsame(), universita.get(0), docente1));*/
 
 
-        Studente studente1 = new Studente("ma","fdsfd","studente:0");
+        /*Studente studente1 = new Studente("ma","fdsfd","studente:0");
         studente1.setIndexFacolta(0);
 
         studente1.setIscritto(true);
-        universita.get(0).getEsameAttivo().addStudente(studente1);
+        universita.get(0).getEsameAttivo().addStudente(studente1);*/
 
 
 
@@ -65,7 +65,7 @@ public class Test {
         Studente studente3 = new Studente("dfusdfsd","m,add","studente:2");
         studente3.setIndexFacolta(1);*/
 
-        universita.get(0).addStudente(studente1);
+        //universita.get(0).addStudente(studente1);
         //universita.get(1).addStudente(studente2);
         //universita.get(1).addStudente(studente3);
 
