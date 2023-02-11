@@ -4,16 +4,7 @@
     "facolts": [
         {
             "type": "giurisprudenza",
-            "studenti": [
-                {
-                    "nome": "matteo",
-                    "cognome": "sorvilo",
-                    "id": "studente:0",
-                    "indexFacolta": 0,
-                    "esamiFatti": [],
-                    "iscritto": false
-                }
-            ],
+            "studenti": [],
             "docenti": [],
             "esameAttivo": null,
             "esami": [
@@ -33,16 +24,7 @@
         },
         {
             "type": "matematica",
-            "studenti": [
-                {
-                    "nome": "matfd",
-                    "cognome": "ikdfs",
-                    "id": "studente:1",
-                    "indexFacolta": 1,
-                    "esamiFatti": [],
-                    "iscritto": false
-                }
-            ],
+            "studenti": [],
             "docenti": [],
             "esameAttivo": null,
             "esami": [
