@@ -1,0 +1,84 @@
+{
+    "studentiInAttesa": [],
+    "docentiInAttesa": [],
+    "facolts": [
+        {
+            "type": "giurisprudenza",
+            "studenti": [
+                {
+                    "nome": "matteo",
+                    "cognome": "sorvilo",
+                    "id": "studente:0",
+                    "indexFacolta": 0,
+                    "esamiFatti": [],
+                    "iscritto": false
+                }
+            ],
+            "docenti": [],
+            "esameAttivo": null,
+            "esami": [
+                {
+                    "nomeEsame": "Scienze penitenziarie"
+                },
+                {
+                    "nomeEsame": "Criminologia"
+                },
+                {
+                    "nomeEsame": "Digital marketing"
+                },
+                {
+                    "nomeEsame": "Scienze politiche e sociali"
+                }
+            ]
+        },
+        {
+            "type": "matematica",
+            "studenti": [
+                {
+                    "nome": "matfd",
+                    "cognome": "ikdfs",
+                    "id": "studente:1",
+                    "indexFacolta": 1,
+                    "esamiFatti": [],
+                    "iscritto": false
+                }
+            ],
+            "docenti": [],
+            "esameAttivo": null,
+            "esami": [
+                {
+                    "nomeEsame": "analisi 1"
+                },
+                {
+                    "nomeEsame": "analisi 2"
+                },
+                {
+                    "nomeEsame": "Geometria A"
+                },
+                {
+                    "nomeEsame": "Algebra A"
+                }
+            ]
+        },
+        {
+            "type": "informatica",
+            "studenti": [],
+            "docenti": [],
+            "esameAttivo": null,
+            "esami": [
+                {
+                    "nomeEsame": "analisi 1"
+                },
+                {
+                    "nomeEsame": "Reti 1"
+                },
+                {
+                    "nomeEsame": "Inglese 1"
+                },
+                {
+                    "nomeEsame": "Programmazione 1"
+                }
+            ]
+        }
+    ]
+}

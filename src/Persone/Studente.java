@@ -1,29 +1,22 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Persone;
-import universita.Esame;
-import universita.EsameAttivo;
-import universita.EsameStudente;
 
+import Esame.EsameAttivo;
+import Esame.EsameStudente;
+import com.fasterxml.jackson.annotation.JsonGetter;
 import java.util.ArrayList;
+import java.util.concurrent.ThreadLocalRandom;
 
-/**
- *
- * @author STUDENTE
- */
 public class Studente extends Persona{
-    private String idStudente;
+    private String id;
     private int indexFacolta;
     private ArrayList<EsameStudente> esamiFatti;
     private boolean iscritto;
-    
+    public Studente(){
+
+    }
     public Studente(String nome,String cognome, String id){
         super(nome,cognome);
-        this.idStudente = id;
+        this.id = id;
         this.esamiFatti = new ArrayList<>();
         this.iscritto = false;
     }
@@ -35,22 +28,24 @@ public class Studente extends Persona{
     public String toString(){
         String returnValue = "{ "+super.nome + ", "+super.cognome + " }";
 
-        if(this.idStudente != null){
-            returnValue = returnValue.replace("}", ", id: "+ this.idStudente+" }");
+        if(this.id != null){
+            returnValue = returnValue.replace("}", ", id: "+ this.id+" }");
 
         }
-
+        
         return returnValue;
     }
-    
+
+    @JsonGetter
     public String getId(){
-        return this.idStudente;
+        return this.id;
     }
 
     public void setIdStudente(String idStudente) {
-        this.idStudente = idStudente;
+        this.id = idStudente;
     }
 
+    @JsonGetter
     public int getIndexFacolta() {
         return indexFacolta;
     }
@@ -59,6 +54,7 @@ public class Studente extends Persona{
         this.indexFacolta = indexFacolta;
     }
 
+    @JsonGetter
     public boolean isIscritto() {
         return iscritto;
     }
@@ -67,6 +63,7 @@ public class Studente extends Persona{
         this.iscritto = iscritto;
     }
 
+    @JsonGetter
     public ArrayList<EsameStudente> getEsamiFatti() {
         return esamiFatti;
     }
@@ -86,6 +83,22 @@ public class Studente extends Persona{
         }
 
         return false;
+    }
+
+    public void iscrivitiEsame(EsameAttivo esameAttivo){
+        this.setIscritto(true);
+        esameAttivo.addStudente(this);
+    }
+
+    public float faiEsame(EsameAttivo esameAttivo){
+        float voto = (float) Math.round(ThreadLocalRandom.current().nextDouble(5.0,30.0)*100)/100;;
+        EsameStudente esameStudente = new EsameStudente(esameAttivo.getNomeEsame(), voto);
+        esameAttivo.removeStudente(this);
+
+        this.addEsame(esameStudente);
+        this.setIscritto(false);
+
+        return voto;
     }
 
 

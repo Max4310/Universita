@@ -1,15 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Facolta;
 
 import Persone.Docente;
 import Persone.Studente;
-import universita.Esame;
-import universita.EsameAttivo;
+import Esame.Esame;
+import Esame.EsameAttivo;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.ArrayList;
 
@@ -17,6 +12,8 @@ import java.util.ArrayList;
  *
  * @author STUDENTE
  */
+
+@JsonDeserialize(as = Facolta_C.class)
 public interface Facolta_I {
     public Studente getStudente(String id);
 
@@ -47,4 +44,7 @@ public interface Facolta_I {
     public void remoteEsame();
 
     public ArrayList<Esame> getEsami();
+
+    public void setLastStudente(int i);
+    public void setLastDocente(int i);
 }

@@ -1,29 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Facolta;
+
+
 import Persone.Docente;
 import Persone.Studente;
-import universita.Esame;
-import universita.EsameAttivo;
+import Esame.Esame;
+import Esame.EsameAttivo;
+import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.ArrayList;
-
 
 /**
  *
  * @author STUDENTE
  */
-abstract public class Facolta_C implements Facolta_I{
+
+/*@JsonSubTypes(
+{
+        @JsonSubTypes.Type(value = Giurispudenza.class),
+        @JsonSubTypes.Type(value = Matematica.class),
+        @JsonSubTypes.Type(value = Informatica.class)
+})*/
+//@JsonDeserialize(as = Giurispudenza.class)
+
+
+public abstract class  Facolta_C implements Facolta_I{
+
     protected ArrayList<Studente> studenti; //lista di tutti i studenti della facolta
     protected ArrayList<Docente> docenti; //lista di tutti i docenti
-    protected ArrayList<Esame> esamiCompleti; //lista di tutti gli esami della facolta
+    private ArrayList<Esame> esamiCompleti; //lista di tutti gli esami della facolta
+
+    @JsonIgnore
     protected static int lastDocente;
+    @JsonIgnore
     protected static int lastStudente;
+
     protected EsameAttivo esameAttivo;
+
+
+    public Facolta_C(){
+
+    }
 
     @Override
     public Studente getStudente(String id) {
@@ -67,21 +84,31 @@ abstract public class Facolta_C implements Facolta_I{
     }
 
     @Override
+    @JsonGetter
     public ArrayList<Studente> getStudenti() {
         return this.studenti;
     }
 
     @Override
+    @JsonGetter
     public ArrayList<Docente> getDocenti() {
         return this.docenti;
     }
 
     @Override
+    public String getIdFacolta() {
+        return null;
+    }
+
+
+    @Override
+    @JsonIgnore
     public int getLastDocente(){
         return lastDocente;
     }
 
     @Override
+    @JsonIgnore
     public int getLastStudente(){
         return lastStudente;
     }
@@ -97,6 +124,7 @@ abstract public class Facolta_C implements Facolta_I{
     }
 
     @Override
+    @JsonIgnore
     public Esame getNextEsame() {
         //prendo il prossimo esame
 
@@ -123,4 +151,18 @@ abstract public class Facolta_C implements Facolta_I{
     public ArrayList<Esame> getEsami() {
         return this.esamiCompleti;
     }
+    public void setEsami(ArrayList<Esame> esamiCompleti) {
+        this.esamiCompleti = esamiCompleti;
+    }
+
+
+    public void setLastDocente(int lastDocente) {
+        Facolta_C.lastDocente = lastDocente;
+    }
+    public void setLastStudente(int lastStudente) {
+        Facolta_C.lastStudente = lastStudente;
+    }
+
+    public abstract String toString();
 }
+
