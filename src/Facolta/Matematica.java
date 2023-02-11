@@ -1,8 +1,14 @@
 package Facolta;
 
-import universita.Esame;
+import Esame.Esame;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 import java.util.ArrayList;
+
+@JsonTypeName("matematica")
+@JsonDeserialize(as = Matematica.class)
 
 public class Matematica extends Facolta_C implements Facolta_I{
 
@@ -12,16 +18,18 @@ public class Matematica extends Facolta_C implements Facolta_I{
         lastDocente = 0;
         lastStudente = 0;
         this.esameAttivo = null;
-        this.esamiCompleti = new ArrayList<>();
+        ArrayList<Esame> esami = new ArrayList<>();
 
+        esami.add(new Esame("analisi 1"));
+        esami.add(new Esame("analisi 2"));
+        esami.add(new Esame("Geometria A"));
+        esami.add(new Esame("Algebra A"));
+        this.setEsami(esami);
 
-        this.esamiCompleti.add(new Esame("analisi 1", this));
-        this.esamiCompleti.add(new Esame("analisi 2", this));
-        this.esamiCompleti.add(new Esame("Geometria A", this));
-        this.esamiCompleti.add(new Esame("Algebra A", this));
     }
 
     @Override
+    @JsonIgnore
     public String getIdFacolta() {
         return "matematica";
     }

@@ -1,0 +1,66 @@
+{
+    "studentiInAttesa": [],
+    "docentiInAttesa": [],
+    "facolts": [
+        {
+            "type": "giurisprudenza",
+            "studenti": [],
+            "docenti": [],
+            "esameAttivo": null,
+            "esami": [
+                {
+                    "nomeEsame": "Scienze penitenziarie"
+                },
+                {
+                    "nomeEsame": "Criminologia"
+                },
+                {
+                    "nomeEsame": "Digital marketing"
+                },
+                {
+                    "nomeEsame": "Scienze politiche e sociali"
+                }
+            ]
+        },
+        {
+            "type": "matematica",
+            "studenti": [],
+            "docenti": [],
+            "esameAttivo": null,
+            "esami": [
+                {
+                    "nomeEsame": "analisi 1"
+                },
+                {
+                    "nomeEsame": "analisi 2"
+                },
+                {
+                    "nomeEsame": "Geometria A"
+                },
+                {
+                    "nomeEsame": "Algebra A"
+                }
+            ]
+        },
+        {
+            "type": "informatica",
+            "studenti": [],
+            "docenti": [],
+            "esameAttivo": null,
+            "esami": [
+                {
+                    "nomeEsame": "analisi 1"
+                },
+                {
+                    "nomeEsame": "Reti 1"
+                },
+                {
+                    "nomeEsame": "Inglese 1"
+                },
+                {
+                    "nomeEsame": "Programmazione 1"
+                }
+            ]
+        }
+    ]
+}

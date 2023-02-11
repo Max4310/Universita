@@ -1,6 +1,5 @@
-package universita;
+package Esame;
 
-import Facolta.Facolta_I;
 import Persone.Docente;
 import Persone.Studente;
 
@@ -10,8 +9,11 @@ public class EsameAttivo extends Esame{
     private ArrayList<Studente> studentiIscritti;
     private Docente esaminatore;
 
-    public EsameAttivo(String nomeEsame, Facolta_I facolta, Docente esaminatore) {
-        super(nomeEsame, facolta);
+    public EsameAttivo(){
+
+    }
+    public EsameAttivo(String nomeEsame, Docente esaminatore) {
+        super(nomeEsame);
         this.studentiIscritti = new ArrayList<>();
         this.esaminatore = esaminatore;
 
@@ -40,7 +42,7 @@ public class EsameAttivo extends Esame{
     }
 
     public String toString(){
-        return "{ Nome Esame: " + this.getNomeEsame() + ", Facolta: " + this.getFacolta() + "\nDocente: " + this.esaminatore.toString() + ", Numero Iscritti: " +
+        return "{ Nome Esame: " + this.getNomeEsame() + "\nDocente: " + this.esaminatore.toString() + ", Numero Iscritti: " +
                 this.studentiIscritti.size() + " }";
     }
 }

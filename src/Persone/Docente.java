@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 package Persone;
 
+import Esame.*;
 import Facolta.Facolta_I;
+import com.fasterxml.jackson.annotation.JsonGetter;
 
-import javax.print.Doc;
 
-/**
- *
- * @author STUDENTE
- */
 public class Docente extends Persona {
     private String idDocente;
     private int indexFacolta;
@@ -22,7 +13,11 @@ public class Docente extends Persona {
     public Docente(String nome, String cognome){
         super(nome,cognome);
     }
-    
+
+    public Docente(){
+
+    }
+
     public Docente(String nome,String cognome, String id){
         super(nome,cognome);
         this.idDocente = id;
@@ -31,7 +26,7 @@ public class Docente extends Persona {
     public String toString(){
         return "{ "+super.nome + ", "+super.cognome + ", id: " + this.idDocente +" }";
     }
-    
+    @JsonGetter
     public String getId(){
         return this.idDocente;
     }
@@ -40,6 +35,7 @@ public class Docente extends Persona {
         this.idDocente = id;
     }
 
+    @JsonGetter
     public int getIndexFacolta() {
         return indexFacolta;
     }
@@ -50,5 +46,14 @@ public class Docente extends Persona {
 
     public boolean equals(Docente docente){
         return docente.getId().equals(this.idDocente);
+    }
+
+    public void postaEsame(Facolta_I facolta, Esame esame){
+        facolta.remoteEsame();
+        facolta.setEsameAttivo(new EsameAttivo(esame.getNomeEsame(), this));
+    }
+
+    public void chiudiEsame(Facolta_I facolta){
+        facolta.setEsameAttivo(null);
     }
 }
